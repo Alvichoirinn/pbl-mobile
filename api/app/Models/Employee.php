@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Carbon;
 
 /**
  * @property int $id
@@ -45,28 +44,6 @@ class Employee extends Model
         "user_id",
     ];
 
-    public int $id;
-    public int $user_id;
-    public int|null $ck_settings_id;
-    public string $first_name;
-    public string $last_name;
-    public string $gender;
-    public string $address;
-    /**
-     * @var Illuminate\Support\Carbon|null
-     */
-    public Carbon|null $created_at;
-    /**
-     * @var Illuminate\Support\Carbon|null
-     */
-    public Carbon|null $updated_at;
-    /**
-     * @var App\Models\Employee|null
-     */
-    public Employee|null $user;
-    /**
-     * @return BelongsTo<Employee,Employee>
-     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(Employee::class, "id");

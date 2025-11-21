@@ -31,7 +31,7 @@ class AuthController extends Controller
         return ResponseWrapper::make(
             "Login Sukses",
             200,
-            ["token" => $token],
+            ["token" => $token, "user_id" => $user["id"]],
             null,
         );
     }
