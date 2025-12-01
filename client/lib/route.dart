@@ -12,7 +12,7 @@ import 'screens/admin_screen.dart';
 import 'widgets/navbar_user.dart';
 
 final GoRouter router = GoRouter(
-  initialLocation: "/change-password",
+  initialLocation: "/login",
   redirect: (context, state) {
     // return AuthService.instance.redirectUser(state);
   },
